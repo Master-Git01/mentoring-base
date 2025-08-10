@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { MaterialsCardData } from '../../interfaces/materials-card.interface';
 import { NgClass } from '@angular/common';
+import { CardClassesData } from '../../interfaces/card-classes.interface';
 
 @Component({
   selector: 'app-materials-card',
@@ -12,5 +13,5 @@ import { NgClass } from '@angular/common';
 })
 export class MaterialsCardComponent {
   @Input({ required: true }) materialsCard!: MaterialsCardData;
-  @Input({ required: true }) cardClasses!: any;
+  @Input({ required: true }) cardClasses!: CardClassesData;
 }
