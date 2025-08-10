@@ -1,0 +1,94 @@
+.main {
+  &__promo {
+    background: url("/assets/images/bg/builder_bg.jpg") center center / cover
+      no-repeat;
+    min-height: 87vh;
+    display: flex;
+    align-items: center;
+
+    &-title {
+      font-weight: 700;
+      font-size: 45px;
+      color: var(--color-honey);
+    }
+  }
+
+  &__reasons {
+    margin-top: 28px;
+    &-list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+    }
+
+    &-item {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+
+      &-icon {
+        & img {
+          width: 72px;
+        }
+      }
+
+      &-descr {
+        max-width: 333px;
+        font-weight: 500;
+        font-size: 18px;
+        color: var(--color-gray);
+
+        & span {
+          color: var(--color-graphite);
+        }
+      }
+    }
+  }
+
+  &__materials {
+    margin-top: 28px;
+    &-pagination {
+      display: flex;
+      justify-self: end;
+      color: var(--color-honey);
+    }
+
+    &-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 421px);
+      grid-template-rows: repeat(2, 200px);
+      gap: 28px;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &-card {
+      background-color: var(--color-white);
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+.card {
+  &__0 {
+    grid-row: span 2;
+  }
+}
+
+::ng-deep .ngx-pagination li a span:last-child {
+  color: var(--color-gray); /* цвет цифр */
+}
+
+::ng-deep .ngx-pagination li.current span:last-child {
+  color: var(--color-honey);
+  background-color: none;
+  font-weight: bold;
+}
+
+::ng-deep .ngx-pagination .current {
+  background: none !important;
+}

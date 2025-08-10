@@ -1,0 +1,79 @@
+<section class="main__promo">
+  <div class="container">
+    <h1 class="main__promo-title">
+      Инструмент для вашего<br />
+      бизнеса
+    </h1>
+  </div>
+</section>
+
+<section class="main__reasons">
+  <div class="container">
+    <ul class="main__reasons-list">
+      <li class="main__reasons-item">
+        <div class="main__reasons-item-icon">
+          <img
+            src="/assets/icons/section-reasons/warehouse.png"
+            alt="Warehouse"
+          />
+        </div>
+
+        <p class="main__reasons-item-descr">
+          <span>Большой ассортимент</span> <br />
+          строительных материалов всегда в наличии
+        </p>
+      </li>
+
+      <li class="main__reasons-item">
+        <div class="main__reasons-item-icon">
+          <img src="/assets/icons/section-reasons/truck.png" alt="Truck" />
+        </div>
+
+        <p class="main__reasons-item-descr">
+          <span>Доставка стройматериалов</span><br />
+          в течении четырех часов или в любое удобное время
+        </p>
+      </li>
+
+      <li class="main__reasons-item">
+        <div class="main__reasons-item-icon">
+          <img src="/assets/icons/section-reasons/like.png" alt="Like" />
+        </div>
+
+        <p class="main__reasons-item-descr">
+          Многоуровневая
+          <span
+            >система<br />
+            управления качеством</span
+          >
+          по стандарту ISO 9001
+        </p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="main__materials">
+  <div class="container">
+    <div class="main__materials-pagination">
+      <pagination-controls
+        (pageChange)="currentPage = $event"
+        [maxSize]="5"
+        [directionLinks]="false"
+        [autoHide]="false"
+      ></pagination-controls>
+    </div>
+    <div class="main__materials-cards">
+      <app-materials-card
+        *ngFor="
+          let card of materialsCards
+            | paginate : { itemsPerPage: 5, currentPage: currentPage };
+          trackBy: trackByCardId
+        "
+        [materialsCard]="card"
+        [cardClasses]="cardClasses[getCardMod5(card.id)]"
+        [ngClass]="'main__materials-card card__' + getCardMod5(card.id)"
+      ></app-materials-card>
+    </div>
+  </div>
+</section>

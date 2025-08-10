@@ -1,0 +1,14 @@
+<div class="materials-card">
+  <h2 class="materials-card__title" [ngClass]="cardClasses.title">
+    {{ materialsCard.title }}
+  </h2>
+  <div class="materials-card__image" [ngClass]="cardClasses.image">
+    <img [src]="materialsCard.img" alt="Materials" />
+  </div>
+  <a href="#" class="materials-card__link" [ngClass]="cardClasses.link">
+    <span>Перейти в каталог</span>
+    <button class="materials-card__button">
+      <img src="/assets/icons/section-materials/arrow.svg" alt="arrow" />
+    </button>
+  </a>
+</div>

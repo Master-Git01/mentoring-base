@@ -1,0 +1,132 @@
+// БЭМ-структура
+.footer {
+  background-color: #4b565e;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 34px 0 52px 0;
+  }
+
+  &__width {
+    width: 660px;
+  }
+
+  &__contacts {
+    display: flex;
+    gap: 56px;
+  }
+
+  &__contact {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__descr {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    & > span {
+      font-family: "Inter";
+      font-weight: 500;
+      font-size: 16px;
+      color: #ffffff;
+    }
+  }
+
+  &__title {
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  &__right {
+    padding: 34px 0px 34px 126px;
+    border-left: 1px solid #566169;
+  }
+
+  &__text {
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  &__question {
+    font-family: "Inter";
+    font-weight: 700;
+    font-size: 18px;
+    text-align: left;
+    color: #ffffff;
+  }
+
+  &__form {
+    margin-top: 32px;
+    width: 534px;
+    height: 48px;
+    padding-left: 24px;
+    border: 1px solid #f0ba4e;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__button {
+    padding: 12px 19px;
+    background: #f0ba4e;
+    border-radius: 30px;
+    border: none;
+    margin: 3px;
+  }
+  &__input {
+    background-color: #4b565e;
+    border: none;
+    min-width: 70%;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 53px;
+    padding-top: 34px;
+    padding-bottom: 32px;
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__icons-items {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__links {
+    display: flex;
+    gap: 28px;
+  }
+  &__link {
+    text-decoration: none;
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 14px;
+    color: #ffffff;
+  }
+
+  &__date {
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+}

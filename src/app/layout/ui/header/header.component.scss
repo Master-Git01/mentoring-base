@@ -1,0 +1,128 @@
+.header {
+  &__top {
+    background-color: var(--color-charcoal);
+
+    &-container {
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &-left {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+
+      & a {
+        font-weight: 600;
+        font-size: 16px;
+        color: var(--color-light-text);
+      }
+    }
+
+    &-list {
+      display: flex;
+      gap: 24px;
+    }
+
+    &-right {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+
+      & a {
+        display: flex;
+        gap: 10px;
+        color: var(--color-white);
+      }
+    }
+
+    &-cart {
+      display: flex;
+      align-items: center;
+      height: 48px;
+      padding: 0 14px;
+      border: 1px solid var(--color-honey);
+      border-radius: 50px;
+      cursor: pointer;
+
+      &:active {
+        background-color: var(--color-honey);
+      }
+
+      & img {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
+
+  &__bottom {
+    background-color: var(--color-honey);
+
+    &-container {
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &-left {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    &-catalog {
+      display: flex;
+      gap: 24px;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--color-graphite);
+
+      &-burger {
+        display: flex;
+        gap: 10px;
+      }
+
+      &-list {
+        display: flex;
+        gap: 24px;
+      }
+    }
+
+    &-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    &-search {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--color-graphite);
+      & input {
+        width: clamp(200px, 50vw, 400px);
+      }
+    }
+
+    &-location {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      &-icon img {
+        transform: rotate(-90deg);
+      }
+
+      &-text {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 100%;
+        color: var(--color-white);
+      }
+    }
+  }
+}
