@@ -11,4 +11,9 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./users/users.routes').then((m) => m.usersRoutes),
   },
+  {
+    path: MainPath.Todos,
+    loadChildren: () =>
+      import('./todos/todos.routes').then((m) => m.todosRoutes),
+  },
 ];

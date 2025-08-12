@@ -1,1 +1,9 @@
-<p>todos works!</p>
+<section class="todos">
+  <div class="container">
+    <h1 class="todos__title">Список задач</h1>
+    <app-todos-list
+      [todos]="todos"
+      (deleteTodo)="deleteTodo($event)"
+    ></app-todos-list>
+  </div>
+</section>
