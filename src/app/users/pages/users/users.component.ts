@@ -4,15 +4,14 @@ import {
   Component,
   inject,
 } from '@angular/core';
-import { UsersCardComponent } from '../../components/users-card/users-card.component';
 import { UsersApiService } from '../../services/users-api.service';
 import { User } from '../../interfaces/users.interface';
-import { NgFor } from '@angular/common';
+import { UsersListComponent } from '../../components/users-list/users-list.component';
 
 @Component({
   selector: 'app-users',
   standalone: true,
-  imports: [UsersCardComponent, NgFor],
+  imports: [UsersListComponent],
   templateUrl: './users.component.html',
   styleUrl: './users.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

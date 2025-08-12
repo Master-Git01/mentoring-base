@@ -2,13 +2,9 @@
   <div class="container">
     <h1 class="users__title">Компонент списка пользователей</h1>
 
-    <div class="users__list">
-      <ng-container *ngFor="let user of users">
-        <app-users-card
-          [user]="user"
-          (deleteUser)="deleteUser($event)"
-        ></app-users-card>
-      </ng-container>
-    </div>
+    <app-users-list
+      [users]="users"
+      (deleteUser)="deleteUser($event)"
+    ></app-users-list>
   </div>
 </section>
