@@ -4,11 +4,16 @@ import { MainPath } from './core/enums/main-path.enum';
 export const routes: Routes = [
   {
     path: MainPath.ROOT,
-    loadChildren: () => import('./main/main.routes').then((m) => m.mainRoutes),
+    loadComponent: () =>
+      import('./main/components/materials-card/materials-card.component').then(
+        (c) => c.MaterialsCardComponent,
+      ),
   },
   {
     path: MainPath.USERS,
-    loadChildren: () =>
-      import('./users/users.routes').then((m) => m.usersRoutes),
+    loadComponent: () =>
+      import('./users/components/users-card/users-card.component').then(
+        (c) => c.UsersCardComponent,
+      ),
   },
 ];
