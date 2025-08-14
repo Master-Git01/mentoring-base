@@ -5,15 +5,13 @@ export const routes: Routes = [
   {
     path: MainPath.ROOT,
     loadComponent: () =>
-      import('./main/components/materials-card/materials-card.component').then(
-        (c) => c.MaterialsCardComponent,
-      ),
+      import('./main/pages/main/main.component').then((c) => c.MainComponent),
   },
   {
     path: MainPath.USERS,
     loadComponent: () =>
-      import('./users/components/users-card/users-card.component').then(
-        (c) => c.UsersCardComponent,
+      import('./users/pages/users/users.component').then(
+        (c) => c.UsersComponent,
       ),
   },
 ];
