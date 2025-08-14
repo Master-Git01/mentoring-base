@@ -5,22 +5,20 @@ export const routes: Routes = [
   {
     path: MainPath.ROOT,
     loadComponent: () =>
-      import('./main/components/materials-card/materials-card.component').then(
-        (c) => c.MaterialsCardComponent,
-      ),
+      import('./main/pages/main/main.component').then((c) => c.MainComponent),
   },
   {
     path: MainPath.USERS,
     loadComponent: () =>
-      import('./users/components/users-list/users-list.component').then(
-        (c) => c.UsersListComponent,
+      import('./users/pages/users/users.component').then(
+        (c) => c.UsersComponent,
       ),
   },
   {
     path: MainPath.TODOS,
     loadComponent: () =>
-      import('./todos/components/todos-list/todos-list.component').then(
-        (c) => c.TodosListComponent,
+      import('./todos/pages/todos/todos.component').then(
+        (c) => c.TodosComponent,
       ),
   },
 ];
