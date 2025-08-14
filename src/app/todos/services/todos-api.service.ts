@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Todo } from '../interfaces/todos.interface';
 
@@ -7,11 +7,11 @@ import { Todo } from '../interfaces/todos.interface';
   providedIn: 'root',
 })
 export class TodosApiService {
-  constructor(private http: HttpClient) {}
+  private http: HttpClient = inject(HttpClient);
 
-  getTodos(): Observable<Todo[]> {
+  getTodos(todosLimit: number = 20): Observable<Todo[]> {
     return this.http.get<Todo[]>(
-      'https://jsonplaceholder.typicode.com/todos?_limit=20'
+      `https://jsonplaceholder.typicode.com/todos?_limit=${todosLimit}`,
     );
   }
 }

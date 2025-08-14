@@ -7,11 +7,13 @@ export const routes: Routes = [
     loadComponent: () => import('./main/pages/main/main.component').then((c) => c.MainComponent),
   },
   {
-    path: MainPath.Users,
-    loadChildren: () => import('./users/users.routes').then((m) => m.usersRoutes),
+    path: MainPath.USERS,
+    loadComponent: () =>
+      import('./users/pages/users/users.component').then((c) => c.UsersComponent),
   },
   {
-    path: MainPath.Todos,
-    loadChildren: () => import('./todos/todos.routes').then((m) => m.todosRoutes),
+    path: MainPath.TODOS,
+    loadComponent: () =>
+      import('./todos/pages/todos/todos.component').then((c) => c.TodosComponent),
   },
 ];
