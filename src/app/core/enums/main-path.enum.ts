@@ -1,3 +1,3 @@
 export enum MainPath {
-  Root = '',
+  ROOT = '',
 }
