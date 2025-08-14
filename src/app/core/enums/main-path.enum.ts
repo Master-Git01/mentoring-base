@@ -1,5 +1,5 @@
 export enum MainPath {
-  Root = '',
-  Users = 'users',
-  Todos = 'todos',
+  ROOT = '',
+  USERS = 'users',
+  TODOS = 'todos',
 }
