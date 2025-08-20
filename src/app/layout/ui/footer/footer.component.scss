@@ -1,5 +1,5 @@
 .footer {
-  background-color: #4b565e;
+  background-color: var(--color-charcoal);
 
   &__top {
     display: flex;
@@ -34,19 +34,19 @@
     & > span {
       font-weight: 500;
       font-size: 16px;
-      color: #ffffff;
+      color: var(--color-white);
     }
   }
 
   &__title {
     font-weight: 400;
     font-size: 12px;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--color-silver);
   }
 
   &__right {
     padding: 34px 0px 34px 126px;
-    border-left: 1px solid #566169;
+    border-left: 1px solid var(--color-charcoal);
   }
 
   &__text {
@@ -54,14 +54,14 @@
     font-size: 14px;
     line-height: 24px;
     text-align: left;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--color-silver);
   }
 
   &__question {
     font-weight: 700;
     font-size: 18px;
     text-align: left;
-    color: #ffffff;
+    color: var(--color-white);
   }
 
   &__form {
@@ -69,7 +69,7 @@
     width: 534px;
     height: 48px;
     padding-left: 24px;
-    border: 1px solid #f0ba4e;
+    border: 1px solid var(--color-honey);
     border-radius: 30px;
     display: flex;
     justify-content: space-between;
@@ -77,13 +77,13 @@
   }
   &__button {
     padding: 12px 19px;
-    background: #f0ba4e;
+    background: var(--color-honey);
     border-radius: 30px;
     border: none;
     margin: 3px;
   }
   &__input {
-    background-color: #4b565e;
+    background-color: var(--color-charcoal);
     border: none;
     min-width: 70%;
   }
@@ -115,12 +115,12 @@
     text-decoration: none;
     font-weight: 400;
     font-size: 14px;
-    color: #ffffff;
+    color: var(--color-white)
   }
 
   &__date {
     font-weight: 400;
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--color-silver);
   }
 }

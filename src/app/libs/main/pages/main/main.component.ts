@@ -20,7 +20,7 @@ export class MainComponent {
   public readonly materialsCards: MaterialsCardData[] = materialsCardArray;
   public readonly cardClasses: CardClassesData[] = cardClassesArray;
 
-  public currentPage: number = 1;
+  public currentPage = 1;
 
   getCardMod5(cardId: number): number {
     return cardId % 5;

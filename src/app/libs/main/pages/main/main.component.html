@@ -1,7 +1,8 @@
 <section class="main__promo">
   <div class="container">
     <h1 class="main__promo-title">
-      Инструмент для вашего<br />
+      Инструмент для вашего
+      <br />
       бизнеса
     </h1>
   </div>
@@ -12,14 +13,12 @@
     <ul class="main__reasons-list">
       <li class="main__reasons-item">
         <div class="main__reasons-item-icon">
-          <img
-            src="/assets/icons/section-reasons/warehouse.png"
-            alt="Warehouse"
-          />
+          <img src="/assets/icons/section-reasons/warehouse.png" alt="Warehouse" />
         </div>
 
         <p class="main__reasons-item-descr">
-          <span>Большой ассортимент</span> <br />
+          <span>Большой ассортимент</span>
+          <br />
           строительных материалов всегда в наличии
         </p>
       </li>
@@ -30,7 +29,8 @@
         </div>
 
         <p class="main__reasons-item-descr">
-          <span>Доставка стройматериалов</span><br />
+          <span>Доставка стройматериалов</span>
+          <br />
           в течении четырех часов или в любое удобное время
         </p>
       </li>
@@ -42,10 +42,11 @@
 
         <p class="main__reasons-item-descr">
           Многоуровневая
-          <span
-            >система<br />
-            управления качеством</span
-          >
+          <span>
+            система
+            <br />
+            управления качеством
+          </span>
           по стандарту ISO 9001
         </p>
       </li>
@@ -66,8 +67,7 @@
     <div class="main__materials-cards">
       <app-materials-card
         *ngFor="
-          let card of materialsCards
-            | paginate : { itemsPerPage: 5, currentPage: currentPage };
+          let card of materialsCards | paginate: { itemsPerPage: 5, currentPage: currentPage };
           trackBy: trackByCardId
         "
         [materialsCard]="card"
