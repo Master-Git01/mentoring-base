@@ -1,0 +1,37 @@
+<h1 class="form-todo__title">Создание задачи</h1>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-todo">
+  <div class="form-todo__group">
+    <label class="form-todo__label" for="title">Заголовок</label>
+    <input class="form-todo__input" id="title" type="text" formControlName="title" />
+    <div
+      class="form-todo__error"
+      *ngIf="form.get('title')?.invalid && (form.get('title')?.dirty || form.get('title')?.touched)"
+    >
+      <div *ngIf="form.get('title')?.errors?.['required']">Заголовок обязателен</div>
+    </div>
+  </div>
+
+  <div class="form-todo__group">
+    <label class="form-todo__label" for="completed">Статус</label>
+    <select class="form-todo__select" id="completed" formControlName="completed">
+      <option [ngValue]="false">Не выполнено</option>
+      <option [ngValue]="true">Выполнено</option>
+    </select>
+  </div>
+
+  <div class="form-todo__group">
+    <label class="form-todo__label" for="userId">ID пользователя</label>
+    <input class="form-todo__input" id="userId" type="number" formControlName="userId" />
+    <div
+      class="form-todo__error"
+      *ngIf="
+        form.get('userId')?.invalid && (form.get('userId')?.dirty || form.get('userId')?.touched)
+      "
+    >
+      <div *ngIf="form.get('userId')?.errors?.['required']">ID обязателен</div>
+    </div>
+  </div>
+
+  <button class="form-todo__button" type="submit" [disabled]="!form.valid">Создать задачу</button>
+</form>

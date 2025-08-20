@@ -1,0 +1,7 @@
+<section class="todos">
+  <div class="container">
+    <h1 class="todos__title">Список задач</h1>
+    <app-todo-create-form (createTodo)="createTodo($event)"></app-todo-create-form>
+    <app-todos-list [todos]="(todos$ | async)!" (deleteTodo)="deleteTodo($event)"></app-todos-list>
+  </div>
+</section>

@@ -1,0 +1,77 @@
+.form-todo {
+  max-width: 400px;
+  margin: 15px auto;
+  background-color: var(--color-white);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--color-honey);
+
+  &__title {
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color-honey);
+  }
+
+  &__group {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+
+  &__input,
+  &__select {
+    padding: 10px;
+    border: 1px solid var(--color-silver);
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+
+  &__error {
+    margin-top: 4px;
+    font-size: 0.85rem;
+    color: var(--color-red);
+  }
+
+  &__button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--color-white);
+    color: var(--color-honey);
+    border: 1px solid var(--color-honey);
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition:
+      background 0.25s,
+      transform 0.1s;
+
+    &:hover {
+      border: 1px solid var(--color-honey);
+      transform: scale(1.02);
+    }
+
+    &:active {
+      transform: scale(0.98);
+      background-color: var(--color-honey);
+      color: var(--color-white);
+    }
+
+    &:disabled {
+      background-color: var(--color-silver);
+      border: none;
+      color: var(--color-white);
+      cursor: not-allowed;
+      transform: scale(1);
+    }
+  }
+}
