@@ -1,0 +1,7 @@
+<section class="users">
+  <div class="container">
+    <h1 class="users__title">Компонент списка пользователей</h1>
+    <app-user-create-form (createUser)="createUser($event)"></app-user-create-form>
+    <app-users-list [users]="(users$ | async)!" (deleteUser)="deleteUser($event)"></app-users-list>
+  </div>
+</section>

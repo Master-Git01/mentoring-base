@@ -1,0 +1,54 @@
+<h1 class="form-user__title">Создание пользователя</h1>
+
+<form class="form-user" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-user__group">
+    <label class="form-user__label" for="name">Имя</label>
+    <input class="form-user__input" id="name" type="text" formControlName="name" />
+    <div
+      class="form-user__error"
+      *ngIf="form.get('name')?.invalid && (form.get('name')?.dirty || form.get('name')?.touched)"
+    >
+      <div *ngIf="form.get('name')?.errors">Имя обязательно</div>
+    </div>
+  </div>
+
+  <div class="form-user__group">
+    <label class="form-user__label" for="email">Email</label>
+    <input class="form-user__input" id="email" type="text" formControlName="email" />
+    <div
+      class="form-user__error"
+      *ngIf="form.get('email')?.invalid && (form.get('email')?.dirty || form.get('email')?.touched)"
+    >
+      <div *ngIf="form.get('email')?.errors">Email обязателен</div>
+    </div>
+  </div>
+
+  <div class="form-user__group">
+    <label class="form-user__label" for="website">Сайт</label>
+    <input class="form-user__input" id="website" type="text" formControlName="website" />
+    <div
+      class="form-user__error"
+      *ngIf="
+        form.get('website')?.invalid && (form.get('website')?.dirty || form.get('website')?.touched)
+      "
+    >
+      <div *ngIf="form.get('website')?.errors">Сайт обязателен</div>
+    </div>
+  </div>
+
+  <div class="form-user__group" formGroupName="company">
+    <label class="form-user__label" for="companyName">Компания</label>
+    <input class="form-user__input" id="companyName" type="text" formControlName="name" />
+    <div
+      class="form-user__error"
+      *ngIf="
+        form.get('company.name')?.invalid &&
+        (form.get('company.name')?.dirty || form.get('company.name')?.touched)
+      "
+    >
+      <div *ngIf="form.get('company.name')?.errors">Имя компании обязательно</div>
+    </div>
+  </div>
+
+  <button class="form-user__button" type="submit" [disabled]="!form.valid">Создать</button>
+</form>
