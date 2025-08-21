@@ -10,34 +10,8 @@
   &__title {
     text-align: center;
     margin-bottom: 16px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
-    color: var(--color-honey);
-  }
-
-  &__group {
-    margin-bottom: 16px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__label {
-    margin-bottom: 6px;
-    font-weight: 500;
-  }
-
-  &__input,
-  &__select {
-    padding: 10px;
-    border: 1px solid var(--color-silver);
-    border-radius: 6px;
-    font-size: 1rem;
-  }
-
-  &__error {
-    margin-top: 4px;
-    font-size: 0.85rem;
-    color: var(--color-red);
   }
 
   &__button {
@@ -74,4 +48,8 @@
       transform: scale(1);
     }
   }
+}
+
+.mat-mdc-form-field {
+  display: block !important;
 }
