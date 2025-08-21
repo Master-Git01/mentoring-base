@@ -5,6 +5,8 @@
 /tmp
 /out-tsc
 /bazel-out
+package-lock.json
+.gitignore
 
 # Node
 /node_modules
