@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Todo } from '../../interfaces/todos.interface';
 import { TodosListComponent } from '../../components/todos-list/todos-list.component';
-import { TodosFacade } from '../../todos.facade';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { TodoCreateFormComponent } from '../../forms/todo-create-form/todo-create-form.component';
+import { TodosService } from '../../services/todos.service';
 
 @Component({
   selector: 'app-todos',
@@ -16,27 +16,32 @@ import { TodoCreateFormComponent } from '../../forms/todo-create-form/todo-creat
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TodosComponent {
-  private readonly todosFacade: TodosFacade = inject(TodosFacade);
+  private readonly todosService: TodosService = inject(TodosService);
 
-  readonly todos$: Observable<Todo[]> = this.todosFacade.todos$;
+  readonly todos$: Observable<Todo[]> = this.todosService.todos$;
 
   constructor() {
     this.initTodos();
   }
 
   createTodo(newTodo: Todo): void {
-    this.todosFacade.createTodo(newTodo);
+    if (this.todosService.isExistingUserId(newTodo)) {
+      alert('Такой email уже существует!');
+    } else {
+      this.todosService.createTodo(newTodo);
+      alert('Новый пользователь успешно создан!');
+    }
   }
 
   editTodo(editedTodo: Todo): void {
-    this.todosFacade.editTodo(editedTodo);
+    this.todosService.editTodo(editedTodo);
   }
 
   deleteTodo(todoId: number): void {
-    this.todosFacade.deleteTodo(todoId);
+    this.todosService.deleteTodo(todoId);
   }
 
   private initTodos(): void {
-    this.todosFacade.initTodos().pipe(takeUntilDestroyed()).subscribe();
+    this.todosService.initTodos().pipe(takeUntilDestroyed()).subscribe();
   }
 }
