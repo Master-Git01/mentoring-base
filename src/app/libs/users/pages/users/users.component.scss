@@ -1,5 +1,14 @@
 .users {
+  position: relative;
+
   &__title {
     margin-top: 20px;
+  }
+
+  &__add-button {
+    position: absolute;
+    bottom: 0px;
+    right: 200px;
+    background-color: var(--color-honey);
   }
 }

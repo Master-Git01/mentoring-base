@@ -1,7 +1,18 @@
 <section class="users">
   <div class="container">
     <h1 class="users__title">Компонент списка пользователей</h1>
-    <app-user-create-form (createUser)="createUser($event)"></app-user-create-form>
-    <app-users-list [users]="(users$ | async)!" (deleteUser)="deleteUser($event)"></app-users-list>
+    <app-users-list
+      [users]="(users$ | async)!"
+      (editUser)="openEditUserDialog($event)"
+      (deleteUser)="onUserDelete($event)"
+    ></app-users-list>
+    <button
+      [matTooltip]="messageTooltip"
+      (click)="openCreateUserDialog()"
+      class="users__add-button"
+      mat-fab
+    >
+      <mat-icon>add</mat-icon>
+    </button>
   </div>
 </section>

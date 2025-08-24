@@ -1,4 +1,4 @@
-<article class="users-card" tabindex="0">
+<article class="users-card" tabindex="0" (dblclick)="onUserEdit()">
   <header class="users-card__header">
     <h3 class="users-card__name">{{ user.name }}</h3>
     <span class="users-card__company">{{ user.company.name }}</span>
@@ -10,7 +10,12 @@
     </p>
   </div>
   <footer class="users-card__footer">
-    <button class="users-card__button" type="button" (click)="onDeleteUser(user.id)">
+    <button
+      [matTooltip]="messageTooltip"
+      class="users-card__button"
+      type="button"
+      (click)="onUserDelete(user.id)"
+    >
       Удалить
     </button>
   </footer>

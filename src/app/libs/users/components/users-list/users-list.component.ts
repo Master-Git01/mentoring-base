@@ -15,8 +15,13 @@ export class UsersListComponent {
   @Input() users: User[] = [];
 
   @Output() deleteUser = new EventEmitter<number>();
+  @Output() editUser = new EventEmitter<User>();
 
-  onDeleteUser(userId: number): void {
+  onUserEdit(user: User): void {
+    this.editUser.emit(user);
+  }
+
+  onUserDelete(userId: number): void {
     this.deleteUser.emit(userId);
   }
 }

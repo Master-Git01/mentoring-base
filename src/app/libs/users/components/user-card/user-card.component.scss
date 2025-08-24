@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background: #fff;
+    background: var(--color-white);
     border: 1px solid #e0e0e0;
     border-radius: 16px;
     box-shadow: 0 4px 16px rgba(60, 60, 60, 0.08);
@@ -12,12 +12,14 @@
     min-height: 220px;
     transition: box-shadow 0.2s;
     position: relative;
-    font-family: 'Segoe UI', 'Arial', sans-serif;
+    justify-content: space-between;
+    cursor: pointer;
 
     &:hover,
     &:focus-within {
       box-shadow: 0 8px 32px rgba(60, 60, 60, 0.16);
       border-color: #bdbdbd;
+      scale: 1.02;
     }
 
     &__header {
@@ -62,7 +64,7 @@
     &__button {
       background: linear-gradient(90deg, #e64646 0%, #ff7676 100%);
       border: none;
-      color: #fff;
+      color: var(--color-white);
       padding: 10px 22px;
       border-radius: 8px;
       font-size: 1rem;

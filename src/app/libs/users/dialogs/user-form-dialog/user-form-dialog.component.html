@@ -1,6 +1,4 @@
-<h1 class="form-user__title">Создание пользователя</h1>
-
-<form class="form-user" [formGroup]="form" (ngSubmit)="onSubmit()">
+<form class="form-user" [formGroup]="form" (ngSubmit)="applyChangesForm()">
   <mat-form-field class="form-user__group">
     <mat-label class="form-user__label" for="name">Имя</mat-label>
     <input matInput class="form-user__input" id="name" type="text" formControlName="name" />
@@ -25,5 +23,14 @@
     <mat-error>Company Name введен неправильно</mat-error>
   </mat-form-field>
 
-  <button class="form-user__button" type="submit" [disabled]="!form.valid">Создать</button>
+  <button
+    [matTooltip]="messageTooltip"
+    mat-flat-button
+    class="form-user__button"
+    type="submit"
+    [disabled]="!form.valid"
+  >
+    {{ data?.user ? 'Редактировать' : 'Добавить' }}
+    <mat-icon>{{ data?.user ? 'edit' : 'add' }}</mat-icon>
+  </button>
 </form>
