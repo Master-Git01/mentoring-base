@@ -1,8 +1,7 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { User } from '../../interfaces/users.interface';
 import { UsersListComponent } from '../../components/users-list/users-list.component';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { UserCreateFormComponent } from '../../forms/user-create-form/user-create-form.component';
 import { UsersService } from '../../services/users.service';
@@ -15,13 +14,16 @@ import { UsersService } from '../../services/users.service';
   styleUrl: './users.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UsersComponent {
+export class UsersComponent implements OnInit {
   private readonly usersService: UsersService = inject(UsersService);
 
   readonly users$: Observable<User[]> = this.usersService.users$;
 
-  constructor() {
-    this.initUsers();
+  ngOnInit(): void {
+    this.usersService
+      .initUsers()
+      .pipe(tap((users: User[]) => (this.usersService.users = users)))
+      .subscribe();
   }
 
   createUser(newUser: User): void {
@@ -39,9 +41,5 @@ export class UsersComponent {
 
   deleteUser(userId: number): void {
     this.usersService.deleteUser(userId);
-  }
-
-  private initUsers(): void {
-    this.usersService.initUsers().pipe(takeUntilDestroyed()).subscribe();
   }
 }
