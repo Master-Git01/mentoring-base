@@ -1,89 +1,36 @@
-.users {
-  &-card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background: var(--color-white);
-    border: 1px solid #e0e0e0;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(60, 60, 60, 0.08);
-    padding: 24px 20px 16px 20px;
-    width: 320px;
-    min-height: 220px;
-    transition: box-shadow 0.2s;
-    position: relative;
-    justify-content: space-between;
+.user-card {
+  max-width: 400px;
+  padding-bottom: 15px;
+  cursor: pointer;
+
+  &:hover {
+    transition: 0.3s;
+    scale: 1.01;
+  }
+
+  &__header-image {
+    background-image: url('/assets/user.jpg');
+    background-size: cover;
+  }
+
+  &__footer-btn {
+    margin-top: 15px;
+    padding: 7px 14px;
+    border: 1px solid #91908e;
+    border-radius: 54px;
+    background-color: white;
     cursor: pointer;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
 
-    &:hover,
-    &:focus-within {
-      box-shadow: 0 8px 32px rgba(60, 60, 60, 0.16);
-      border-color: #bdbdbd;
-      scale: 1.02;
+    &:hover {
+      transition: 0.3s;
+      scale: 1.01;
     }
 
-    &__header {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      margin-bottom: 12px;
-    }
-
-    &__name {
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: #222;
-      margin-bottom: 2px;
-    }
-
-    &__company {
-      font-size: 1rem;
-      color: #888;
-      margin-bottom: 2px;
-    }
-
-    &__info {
-      width: 100%;
-      margin-bottom: 16px;
-    }
-
-    &__email {
-      font-size: 0.98rem;
-      color: #444;
-      margin-bottom: 4px;
-      word-break: break-all;
-    }
-
-    &__footer {
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    &__button {
-      background: linear-gradient(90deg, #e64646 0%, #ff7676 100%);
-      border: none;
-      color: var(--color-white);
-      padding: 10px 22px;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 500;
-      cursor: pointer;
-      box-shadow: 0 2px 8px rgba(230, 70, 70, 0.08);
-      transition:
-        background 0.2s,
-        box-shadow 0.2s,
-        transform 0.1s;
-      margin-top: 0;
-      outline: none;
-
-      &:hover,
-      &:focus {
-        background: linear-gradient(90deg, #d13a3a 0%, #ff5a5a 100%);
-        box-shadow: 0 4px 16px rgba(230, 70, 70, 0.16);
-        transform: translateY(-2px) scale(1.03);
-      }
+    &:active {
+      transition: 0.3s;
+      scale: 0.99;
+      box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
     }
   }
 }

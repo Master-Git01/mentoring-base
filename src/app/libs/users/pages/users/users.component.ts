@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { User } from '../../interfaces/users.interface';
 import { UsersListComponent } from '../../components/users-list/users-list.component';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -25,7 +25,7 @@ import { NotificationService } from '../../../../shared/services/snackbar.servic
   styleUrl: './users.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UsersComponent {
+export class UsersComponent implements OnInit {
   private readonly usersService: UsersService = inject(UsersService);
   private readonly dialog: MatDialog = inject(MatDialog);
   private readonly destroyRef = inject(DestroyRef);
@@ -37,8 +37,11 @@ export class UsersComponent {
     return USER_TOOLTIPS.ADD;
   }
 
-  constructor() {
-    this.initUsers();
+  ngOnInit(): void {
+    this.usersService
+      .initUsers()
+      .pipe(tap((users: User[]) => (this.usersService.users = users)))
+      .subscribe();
   }
 
   openCreateUserDialog(): void {
@@ -68,7 +71,7 @@ export class UsersComponent {
       .subscribe();
   }
 
-  onUserDelete(userId: number): void {
+  openDeleteUserDialog(userId: number): void {
     this.dialog
       .open<UserDeleteConfirmDialogComponent, UserDeleteConfirmDialogData, boolean>(
         UserDeleteConfirmDialogComponent,
@@ -99,9 +102,5 @@ export class UsersComponent {
       this.usersService.createUser(newUser);
       this.notificationService.showSuccess('Новый пользователь успешно создан!');
     }
-  }
-
-  private initUsers(): void {
-    this.usersService.initUsers().pipe(takeUntilDestroyed()).subscribe();
   }
 }

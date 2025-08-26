@@ -4,7 +4,7 @@
     <app-users-list
       [users]="(users$ | async)!"
       (editUser)="openEditUserDialog($event)"
-      (deleteUser)="onUserDelete($event)"
+      (deleteUser)="openDeleteUserDialog($event)"
     ></app-users-list>
     <button
       [matTooltip]="messageTooltip"

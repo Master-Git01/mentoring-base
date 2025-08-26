@@ -6,9 +6,10 @@
   }
 
   &__add-button {
-    position: absolute;
-    bottom: 0px;
-    right: 200px;
+    position: sticky;
+    bottom: 50px;
+    display: flex;
+    justify-self: flex-end;
     background-color: var(--color-honey);
   }
 }

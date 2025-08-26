@@ -9,6 +9,7 @@ import {
 } from '@angular/material/dialog';
 import { SafeHtmlPipe } from '../../../../shared/pipes/safe-html.pipe';
 import { UserDeleteConfirmDialogData } from '../interfaces/user-delete-confirm-dialog-data.interface';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-user-delete-confirm-dialog',
@@ -19,6 +20,7 @@ import { UserDeleteConfirmDialogData } from '../interfaces/user-delete-confirm-d
     MatDialogActions,
     MatDialogContent,
     MatDialogClose,
+    MatCardModule,
     SafeHtmlPipe,
   ],
   templateUrl: './user-delete-confirm-dialog.component.html',

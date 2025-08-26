@@ -2,11 +2,14 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
 import { User } from '../../interfaces/users.interface';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { USER_TOOLTIPS } from '../../enums/constants.enum';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-user-card',
   standalone: true,
-  imports: [MatTooltipModule],
+  imports: [MatTooltipModule, MatButtonModule, MatCardModule, MatIcon],
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

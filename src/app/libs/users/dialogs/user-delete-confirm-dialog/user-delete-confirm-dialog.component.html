@@ -1,7 +1,10 @@
 <mat-dialog-content class="confirm-dialog">
-  <h2 class="confirm-dialog__title">{{ title }}</h2>
+  <mat-card-header class="confirm-dialog__title">{{ title }}</mat-card-header>
 
-  <div class="confirm-dialog__content" [innerHTML]="content | safeHtml"></div>
+  <mat-card-content
+    class="confirm-dialog__content"
+    [innerHTML]="content | safeHtml"
+  ></mat-card-content>
 
   <mat-dialog-actions class="confirm-dialog__actions">
     <button type="button" mat-raised-button mat-dialog-close>Отмена</button>
